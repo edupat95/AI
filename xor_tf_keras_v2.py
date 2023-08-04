@@ -49,8 +49,6 @@ y_hat = model.predict(inputs)
 # Print the predicted outputs
 print(y_hat)
 
-
-
 # Make a prediction
 new_inputs = np.array([[1, 1], [0, 1], [0, 0], [1, 0]])
 prediction = model.predict(new_inputs)
