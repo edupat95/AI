@@ -61,20 +61,16 @@ W2_history = np.array(W2_history)
 
 # Plot the weights evolution during training
 plt.figure(figsize=(10, 6))
-plt.plot(W1_history[:, 0, 0], label='W1[0, 0]')
-plt.plot(W1_history[:, 0, 1], label='W1[0, 1]')
-plt.plot(W1_history[:, 0, 2], label='W1[0, 2]')
-plt.plot(W1_history[:, 0, 3], label='W1[0, 3]')
-plt.plot(W1_history[:, 1, 0], label='W1[1, 0]')
-plt.plot(W1_history[:, 1, 1], label='W1[1, 1]')
-plt.plot(W1_history[:, 1, 2], label='W1[1, 2]')
-plt.plot(W1_history[:, 1, 3], label='W1[1, 3]')
-#Plot the weights evolution of the second layer (capa de salida)
 
-plt.plot(W2_history[:, 0, 0], label='W2[0, 0]')
-plt.plot(W2_history[:, 1, 0], label='W2[1, 0]')
-plt.plot(W2_history[:, 2, 0], label='W2[2, 0]')
-plt.plot(W2_history[:, 3, 0], label='W2[3, 0]')
+# Pesos capa de entrada a capa oculta
+for i in range(N_hidden):
+    for j in range(N_input):
+        plt.plot(W1_history[:, j, i], label='W1[%d, %d]' % (j, i))
+
+# Pesos capa oculta a capa de salida
+for i in range(N_output):
+    for j in range(N_hidden):
+        plt.plot(W2_history[:, j, i], label='W2[%d, %d]' % (j, i))
 
 print("W1 -> ", W1) # Mostramos el valor final que tienen los pesos correspondiente a la capa de entrada a la capa oculta (2 x 2)
 print("W2 -> ", W2) # Mostramos el valor final que tienen los pesos correspondiente a la capa oculta a la capa de salida (2 x 1)
@@ -85,7 +81,6 @@ plt.title('Evolution of Weights in First Layer')
 plt.legend()
 plt.grid()
 plt.show()
-
 
 # Plot the epoch_loss
 plt.figure(figsize=(10, 6))
