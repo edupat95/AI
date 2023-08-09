@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 def celcius_to_fahrenheit(x):
     return (x * 1.8) + 32
 
+#ESTE ES UN PROBLEMA DE REGRESION. NO UN PROBLEMA DE CLASIFICACION
+
 #crear una funcion que cree un conjunto de valores celsius y su resultado en fahrenheit en un arreglo
 celsius = np.array([-40, -10,  0,  8, 15, 22,  38], dtype=float)
 fahrenheit = np.array([-40,  14, 32, 46, 59, 72, 100], dtype=float)
